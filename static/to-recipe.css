@@ -120,56 +120,63 @@ i, h1 {
   color: inherit;
 }
 
-.results-box {
-  margin-top: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 60px;
+.recipe-page {
+  margin-top: 10px;
+  padding: 20px;
 }
 
 .recipe-box {
-  min-width: 300px;
-  width: 300px;
-  height: 400px;
-  justify-content: center;
-  text-align: center;
+  margin: 0 auto;
+  max-width: 66%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-name {
-  font-size: 23px;
-  margin-bottom: 0;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.recipe-img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: 360px;
-  margin-bottom: -5px;
+.main-text {
+  text-align: left;
 }
 
-.instr-btn {
-  padding: 12px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
-  margin-top: 12px;
+.ingredients-box {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.arrow-img {
-  width: 15px;
-  height: 8px;
-  display: inline-block;
-  margin-left: 4px;
-  margin-bottom: 2px;
+.ingredients-list {
+  list-style-type: disc;
+  padding-left: 20px; 
+  margin-bottom: 20px;
 }
 
-.instr-panel {
-  display: none;
+.ingredient {
+  font-size: 16px;
 }
 
-.text-area {
-  margin-bottom: 100px;
+.instructions-box {
+  margin-top: 20px;
+}
+
+.instructions-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instructions-list {
+  list-style-type: decimal;
+  padding-left: 20px; 
+}
+
+.step {
+  font-size: 16px;
 }
 
 footer {
