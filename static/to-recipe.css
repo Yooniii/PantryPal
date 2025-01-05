@@ -77,16 +77,20 @@ button {
   box-sizing: border-box;
   box-shadow: 0px 3px 10px rgb(131, 131, 131);
 }
+
 .staples-btn:hover {
   background-color: #165cbe;
 }
+
 .dropdown {
   display: inline-block;
 }
+
 .dropdown:hover .dropdown-options {
   display: block;
   cursor: default;
 }
+
 .dropdown-options {
   display: none;
   background-color: black;
