@@ -1,9 +1,8 @@
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
-# import pages.toRecipe as toRecipe
+from pages.toRecipe import get_recipes
 from openai import OpenAI
 import os
-
 
 app = Flask(__name__)
 
@@ -34,12 +33,12 @@ def recipe():
             print(f'### list to String : {staples}')
 
             if len(ingredients.strip()) == 0:
-                print('Not enough ingredients inputted')
-                return render_template('error.html')
+              print('Not enough ingredients inputted')
+              return render_template('error.html')
             
             else: 
-                recipe_names, ingredients, images, = toRecipe.get_recipes(ingredients, staples)
-                return render_template('results.html', recipe_names=recipe_names, images=images)
+              recipe_names, ingredients, images, = get_recipes(ingredients, staples)
+              return render_template('results.html', recipe_names=recipe_names, images=images)
             
         else:
             return render_template('toRecipe.html')
@@ -47,10 +46,6 @@ def recipe():
     except Exception as e:
         print('Error Occurred: ', e)
         return render_template('error.html')
-
-# @app.route('/pantryTracker')
-# def ingredients():
-#    return render_template('pantryTracker.html')
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=80, debug=True)
