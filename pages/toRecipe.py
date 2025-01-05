@@ -53,12 +53,20 @@ def provide_recipe(ingredients, staples):
     {
       "role": "system",
       "content": (
-        "You are a culinary expert. Your task is to generate 3 DISTINCT recipes "
-        "using (some, not necessarily all) ingredients provided by the user. Each recipe should include: "
-        "1. The recipe name. "
-        "2. A list of all ingredients required (including missing ones). "
-        "3. A clear distinction of missing ingredients (if any). "
-        "4. Step-by-step cooking instructions (concise yet detailed, 1-2 sentences per step)."
+        "You are a culinary expert. Your task is to generate a DISTINCT recipes "
+        "using (some, not necessarily all) ingredients provided by the user."
+        "Your responses should not use any asterisks and should follow this structured format: "
+        "\n"
+        "## Recipe <number>: <Recipe Name>"
+        "\n"
+        "### Ingredients: "
+        "List all required ingredients here, separating each one into a new line. "
+        "Clearly indicate missing ingredients by appending '(missing)' next to them."
+        "\n"
+        "### Instructions: "
+        "Provide step-by-step cooking instructions, with each step listed on a new line. "
+        "Steps should be concise but detailed enough to follow (1-2 sentences per step)."
+        "\n\n"            
       ),
     },
     {   
@@ -72,8 +80,7 @@ def provide_recipe(ingredients, staples):
 
   response = client.chat.completions.create(
     model="llama-3.1-sonar-large-128k-online",
-    messages=messages,
-    return_images=true
+    messages=messages
   )
 
   # Parse the response
