@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='error.css') }}"
+  />
+  <!-- <link rel="stylesheet" href="../static/error-page.css"> -->
+  <!--<link rel="stylesheet" href="../static/style.css">-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>PantryPal - Error</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="img-container">
+      <img class="logo-img" src="/static/error.png"/>
+    <div class="error-msg">
+      <p>It could be due to one of the following: </p>
+      <ul>
+        <li>- Invalid(Typo, Expired) OpenAI API Key: Doublecheck your key</li>
+        <li>- Program failure: Try rerunning</li>
+        <li>- Not enough ingredients inputted: Provide more ingredients and try rerunning</li>
+      </ul>
+    </div>
+    <div class="btn-container">
+      <a href="./home.html"
+        ><button type="button" class="home-btn">Go Back Home</button></a
+      >
+    </div>
+  </div>
+</body>

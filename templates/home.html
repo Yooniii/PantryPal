@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="../static/home.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <!--<link rel="stylesheet" href="../static/style.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>PantryPal - Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-container">
+            <h class="logo-name">PantryPal</h> 
+            <p class="text"> Enter your API key and select one of the options below to get started!</p>
+            
+            <form method="POST" action="/toRecipe">
+                <div class="key-container">
+                    <input type="text"
+                        name="inputAPIKey"
+                        class="key-box"
+                        placeholder="API Key (sk-)"
+                        oninput="this.value = this.value.replace(/\n/g,'')"
+                        required
+                        {% if OpenAIAPIKey %}
+                            value="{{ OpenAIAPIKey }}"
+                        {% endif %}
+                    ></input>
+                </div>
+
+                <nav class = "btn-container">
+                    <p>&nbsp;</p>
+                    <a href="./toRecipe"><button type="button">Ingredients → Recipe</button></a>
+                    <a href="./pantryTracker"><button type="button">Pantry Tracker</button></a>
+                </nav>
+            </form>
+        </div>
+
+        <div class="img-container">
+            <img class="logo-img" src="/static/logo.png">
+        </div>
+    </div>
+</body>
