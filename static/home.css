@@ -1,0 +1,149 @@
+* {
+  font-family: "Poppins";
+}
+
+.container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+}
+
+.logo-name {
+  font-size: 8rem;
+  font-style: normal;
+  margin-left: -0.4rem;
+}
+
+.logo-img {
+  height: 34rem;
+  width: 34rem;
+  margin-left: 4rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.key-container {
+  margin-top: 2.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.key-box {
+  border-radius: 0.25rem;
+  padding: 1.25rem 1.6rem;
+  border-width: 0.0625rem;
+  font-size: 1.25rem;
+  max-height: 3.15rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #165cbe;
+}
+
+.key-box:focus {
+  outline: none;
+}
+
+i,
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-container {
+  margin-top: -3.125rem;
+}
+
+button {
+  background-color: #262626;
+  border: black;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.94rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: background-color 0.5s;
+  width: 18.65rem;
+  margin-right: 0.19rem;
+}
+
+button:hover {
+  background-color: rgb(77, 77, 77);
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(77, 77, 77);
+}
+
+.no-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 1210px) {
+  .text-container {
+    text-align: center;
+  }
+
+  .img-container {
+    display: none;
+  }
+
+  .logo-name {
+    font-size: 8rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 40.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .key-box {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 745px) {
+  .text-container {
+    text-align: center;
+  }
+
+  .logo-name {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 605px) {
+  .logo-name {
+    font-size: 6.5rem;
+    margin-left: 0.2rem;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .key-box {
+    width: 30rem;
+    margin-left: -0.2rem;
+    font-size: 1.2rem;
+  }
+
+  button {
+    width: 30rem;
+    margin-bottom: 0.5rem;
+    margin-left: -0.2rem;
+    font-size: 1.2rem;
+  }
+}
