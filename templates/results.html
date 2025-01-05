@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='to-recipe.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <title>PantryPal</title>
+</head>
+
+<body>
+  <div class="container ">
+    <div class="logo-container">
+      <a href="/" class="no-style"><h class="logo-name">PantryPal</h> </a>
+      <img class="logo-img" src="/static/logo.png">
+    </div>
+
+    <form method="POST" action="/toRecipe">
+      <div class="search-container">
+        <div class="dropdown">
+          <button class="staples-btn" disabled>Staples</button>
+            <div class="dropdown-options">
+              <input type="checkbox" name="staples" value="butter" checked>Butter<br>
+              <input type="checkbox" name="staples" value="oil" checked>Oil<br>
+              <input type="checkbox" name="staples" value="water" checked>Water<br>
+              <input type="checkbox" name="staples" value="salt" checked>Salt<br>
+              <input type="checkbox" name="staples" value="pepper" checked>Pepper<br>
+            </div>      
+        </div>
+        <textarea name="user-ingred" class="search-bar" placeholder="enter ingredients, separated by commas" rows=1></textarea>
+        <button class="search-btn" onclick="waiting()"></button>
+      </div>
+    </form>
+    
+    {% for recipe_name in recipe_names %}
+      <div class="results-box">
+          <div class="recipe-box">
+            <img class="recipe-img" src="{{ images[i] }}">
+            <h1 class="recipe-name"> {{ recipe_name }} </h1>
+            <div class="text-area"> 
+              <p class="ingredients"> Ingredients: Put ingredients here </p>
+              
+              <button class="instr-btn"> 
+                Instructions 
+                <img class="arrow-img" src="/static/dropdown.png"> 
+              </button>
+              <div class="instr-panel"> 
+                <p class="instr-text"> 
+                  1. Put instructions here <br>
+                  2. This is a test  <br>
+                  3. I'm hungry
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+
+
+  <script src="/static/script.js"></script>
+</body>
+
+
+
