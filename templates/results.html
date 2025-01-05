@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,27 +32,29 @@
       </div>
     </form>
     
-    {% for recipe_name in recipe_names %}
-      <div class="results-box">
-          <div class="recipe-box">
-            <img class="recipe-img" src="{{ images[i] }}">
-            <h1 class="recipe-name"> {{ recipe_name }} </h1>
-            <div class="text-area"> 
-              <p class="ingredients"> Ingredients: Put ingredients here </p>
-              
-              <button class="instr-btn"> 
-                Instructions 
-                <img class="arrow-img" src="/static/dropdown.png"> 
-              </button>
-              <div class="instr-panel"> 
-                <p class="instr-text"> 
-                  1. Put instructions here <br>
-                  2. This is a test  <br>
-                  3. I'm hungry
-                </p>
-              </div>
+    {% for recipe in recipes %}
+      <div class="recipe-page">
+        <div class="recipe-box">
+          <h1 class="recipe-name"> {{ recipe.name }} </h1>
+          
+          <div class="main-text"> 
+            <p class="ingredients-box"> Ingredients: </p>
+            <ul class="ingredients-list">
+              {% for ingredient in recipe.ingredients %} 
+                <li class="ingredient"> {{ ingredient }} </li>
+              {% endfor %}
+            </ul>
+        
+            <div class="instructions-box">
+              <p class="instructions-title"> Instructions: </p>
+              <ol class="instructions-list">
+                {% for step in recipe.instructions %}
+                  <li class="step"> {{ step }} </li>
+                {% endfor %}
+              </ol>
             </div>
           </div>
+        </div>
       </div>
     {% endfor %}
 
