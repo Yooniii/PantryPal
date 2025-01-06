@@ -22,9 +22,9 @@
 }
 
 .logo-img {
-  margin-left: 15px;
   height: 110px;
   width: 120px;
+  margin-left: 15px;
 }
 
 .search-container {
@@ -35,15 +35,15 @@
 
 .search-bar {
   border-radius: 4px;
-  padding: 12px 15px;
   border-width: 1px;
-  font-size: 17px;
   height: 50.5px;
   width: 630px;
-  box-sizing: border-box;
+  padding: 12px 15px;
   margin: 0px 10px;
-  border: none;
   box-shadow: 0px 3px 10px rgb(181, 181, 181);
+  box-sizing: border-box;
+  border: none;
+  font-size: 17px;
 }
 
 .search-bar:focus {
@@ -98,13 +98,13 @@ button {
 .dropdown-options {
   display: none;
   background-color: black;
-  color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px 6px;
   position: absolute;
   width: 92px;
   font-size: 17px;
+  color: white;
 }
 
 input[type="checkbox"] {
@@ -140,10 +140,10 @@ footer {
 }
 
 .recipe-page {
-  margin-top: 10px;
-  padding: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
+  padding: 20px;
 }
 
 .recipe-header {
