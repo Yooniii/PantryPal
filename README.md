@@ -1,7 +1,7 @@
 
 # PantryPal
 PantryPal is simple web application that generates recipe ideas using pantry ingredients provided by the user. 
-Built with Python, Flask, Jinja2, HTML, and CSS, PantryPal.
+Built with Python, Flask, Jinja2, HTML, and CSS.
 
 ## Features
 Generates three recipe ideas using the majority of user-provided ingredients.
