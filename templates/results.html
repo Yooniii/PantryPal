@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='to-recipe.css') }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <title>PantryPal</title>
-</head>
+{% extends "to-recipe.html" %}
 
-<body>
-  <!-- Recipe Search Component -->
-  <div class="container ">
-    <div class="logo-container">
-      <a href="/" class="no-style"><h class="logo-name">PantryPal</h> </a>
-      <img class="logo-img" src="/static/logo.png">
-    </div>
-    <form method="POST" action="/toRecipe">
-      <div class="search-container">
-        <div class="dropdown">
-          <button class="staples-btn" disabled>Staples</button>
-            <div class="dropdown-options">
-              <input type="checkbox" name="staples" value="butter" checked>Butter<br>
-              <input type="checkbox" name="staples" value="oil" checked>Oil<br>
-              <input type="checkbox" name="staples" value="water" checked>Water<br>
-              <input type="checkbox" name="staples" value="salt" checked>Salt<br>
-              <input type="checkbox" name="staples" value="pepper" checked>Pepper<br>
-            </div>      
-        </div>
-        <textarea name="user-ingred" class="search-bar" placeholder="enter ingredients, separated by commas" rows=1></textarea>
-        <button class="search-btn" onclick="waiting()"></button>
-      </div>
-    </form>
-  </div>
-
+{% block body %}
+  {{ super() }}
   <div class="results-container">
     {% for recipe in recipes %}
       <div class="recipe-page">
@@ -77,4 +46,6 @@
       </div>
     {% endfor %}
   </div>
-</body>
+{% endblock %}
+
+{% block footer %} {% endblock %}

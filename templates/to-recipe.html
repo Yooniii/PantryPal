@@ -1,14 +1,18 @@
+<!-- Parent Template -->
 <!DOCTYPE html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='to-recipe.css') }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <title>PantryPal</title>
+  {% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='to-recipe.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    {% block title %} <title>PantryPal</title> {% endblock %}
+  {% endblock %}
 </head>
 
 <body>
+  {% block body %}
   <div class="container ">
     <div class="logo-container">
       <a href="/" class="no-style"><h class="logo-name">PantryPal</h> </a>
@@ -31,10 +35,12 @@
         <button class="search-btn" onclick="waiting()"></button>
       </div>
     </form>
-  <script src="/static/toRecipe.js"></script>
+  </div>
+  {% endblock %}
 </body>
 
-<footer>
-  <p>PerplexityAI is used to provide recipes to users. This could lead to slower performance. Thank you for your patience. </p>
-</footer>
-
+{% block footer %}
+  <footer>
+    <p>AI is used to provide recipes to users. This could lead to slower performance. Thank you for your patience. </p>
+  </footer>
+{% endblock %}
