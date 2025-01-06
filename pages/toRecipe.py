@@ -50,7 +50,7 @@ def extract_recipes(response):
   return parsed_recipes
 
 # Returns recipes
-def provide_recipe(ingredients, staples):
+def provide_recipe(ingredients, staples, diet):
   all_ingredients = ingredients + staples
   client = OpenAI(api_key=API_KEY, base_url="https://api.perplexity.ai")
 
@@ -58,24 +58,25 @@ def provide_recipe(ingredients, staples):
     {
       "role": "system",
       "content": (
-        "You are a culinary expert. Generate three DISTINCT recipes "
-        "using (some, not necessarily all) ingredients provided by the user."
-        "Do not use any asterisks or say anything else: strictly follow this format: "
+        "You are a culinary expert. Generate three DISTINCT recipes"
+        "using some or all of the ingredients provided by the user."
+        "Recipes must adhere to the user's dietary restrictions."
+        "Strictly follow the format below without using any additional symbols: "
         "\n ## Recipe <number>. <Recipe Name> \n"
         "### Ingredients: "
-        "List all required ingredients here, each one on a new line. "
-        "Indicate missing ingredients by appending '(missing)' next to them."
+        "List all required ingredients, each one on a new line. "
+        "Mark any missing ingredients with '(missing)' after their name."
         "\n ### Instructions: "
-        "Provide step-by-step cooking instructions, each step on a new line. "
-        "Steps should be concise but detailed enough to follow (1-2 sentences per step)."
+        "Provide step-by-step instructions, each step on a new line. "
+        "Steps should be concise (1-2 sentences) but detailed enough to follow."
         "\n\n"            
       ),
     },
     {   
       "role": "user",
       "content": (
-        f"The ingredients I have: {all_ingredients}."
-        "Give me recipes using (some, not necessarily all) of them."
+        f"The ingredients I have are: {all_ingredients}."
+        "Please generate recipes that adhere to this diet: {diet}."
       ),
     },
   ]
@@ -122,8 +123,8 @@ def fetch_recipe_image(recipe_name):
   return None
 
         
-def get_recipes(ingredients, staples):
+def get_recipes(ingredients, staples, diet):
   print('get_recipes starting...')
-  recipes = provide_recipe(ingredients, staples)
+  recipes = provide_recipe(ingredients, staples, diet)
 
   return recipes

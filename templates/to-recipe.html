@@ -21,17 +21,36 @@
 
     <form method="POST" action="/toRecipe">
       <div class="search-container">
-        <div class="dropdown">
-          <button class="staples-btn" disabled>Staples</button>
+        <div class="btn-container">
+          <!-- Pantry Staples -->
+          <div class="dropdown">
+            <button class="staples-btn" disabled>Staples</button>
             <div class="dropdown-options">
               <input type="checkbox" name="staples" value="butter" checked>Butter<br>
               <input type="checkbox" name="staples" value="oil" checked>Oil<br>
               <input type="checkbox" name="staples" value="water" checked>Water<br>
               <input type="checkbox" name="staples" value="salt" checked>Salt<br>
               <input type="checkbox" name="staples" value="pepper" checked>Pepper<br>
-            </div>      
+            </div>
+          </div>
+          
+          <!-- Dietary Restrictions -->
+          <div class="dropdown">
+            <button class="diet-btn" disabled>Diet</button>
+            <div class="dropdown-options">
+              <input type="checkbox" name="diet" value="vegan"> Vegan<br>
+              <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
+              <input type="checkbox" name="diet" value="gluten-free"> GF<br>
+              <input type="checkbox" name="diet" value="nut-free"> Nut-Free<br>
+              <input type="checkbox" name="diet" value="dairy-free"> Dairy-Free<br>
+            </div>
+          </div>
         </div>
-        <textarea name="user-ingred" class="search-bar" placeholder="enter ingredients, separated by commas" rows=1></textarea>
+
+        <!-- User Ingredients Section -->
+        <textarea name="user-ingred" class="search-bar" placeholder="Enter ingredients, separated by commas" rows="1"></textarea>
+
+        <!-- Submit Button -->
         <button class="search-btn" onclick="waiting()"></button>
       </div>
     </form>

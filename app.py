@@ -26,18 +26,18 @@ def recipe():
     if request.method == 'POST' and form_data.get('user-ingred'):
       ingredients = form_data['user-ingred']
       staples_list = form_data.getlist('staples') 
-      print(f'### STAPLES {type(staples_list)} : {staples_list}')
+      diet_restrictions = form_data.getlist('diet')
+      print(diet_restrictions)
             
-      staples = ""
       staples = ", ".join(staples_list)
-      print(f'### list to String : {staples}')
+      diet = ", ".join(diet_restrictions)
 
       if len(ingredients.strip()) == 0:
         print('Not enough ingredients inputted')
         return render_template('error.html')
             
       else: 
-        recipes = get_recipes(ingredients, staples)
+        recipes = get_recipes(ingredients, staples, diet)
         return render_template('results.html', recipes=recipes)
           
     else:
