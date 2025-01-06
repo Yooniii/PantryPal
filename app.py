@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/home')
 @app.route('/home.html', methods = ["POST", "GET"])
 def home():
-  return render_template('toRecipe.html')
+  return render_template('to-recipe.html')
 
 @app.route('/toRecipe', methods = ["GET", "POST"])
 def recipe():
@@ -18,7 +18,7 @@ def recipe():
     print(f'### {request.full_path} : {request.method}')
     
     if request.method == 'GET':
-      return render_template('toRecipe.html')
+      return render_template('to-recipe.html')
 
     form_data = request.form
     print(f'### form_data : {form_data}')
@@ -41,7 +41,7 @@ def recipe():
         return render_template('results.html', recipes=recipes)
           
     else:
-      return render_template('toRecipe.html')
+      return render_template('to-recipe.html')
     
   except Exception as e:
     print('Error Occurred: ', e)
