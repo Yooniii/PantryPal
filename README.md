@@ -1,5 +1,5 @@
 This is a simple web application that generates three recipe ideas using most of the user-provided ingredients.
-Recipes can be customized according to dietary preferences. Each recipe provides a section for ingredients,
+Recipes can be customized according to dietary preferences and pantry staples. Each recipe provides a section for ingredients,
 missing ingredients (if any), and brief instructions.
 
 Future features I plan to incorporate: functionality that allows users to buy missing ingredients (either online or 
