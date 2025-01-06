@@ -12,10 +12,8 @@ Clearly organized recipes with:
 * Brief instructions to guide users through the preparation.
 
 # Visuals
-<img width="700" alt="Screen Shot 2025-01-06 at 5 26 04 PM" src="https://github.com/user-attachments/assets/0198502f-a95d-4c55-b347-34305b209942" />
-<img width="700" alt="Screen Shot 2025-01-06 at 5 26 38 PM" src="https://github.com/user-attachments/assets/929b647b-b3a9-40a2-9b9d-aa614b627260" />
-<img width="700" alt="Screen Shot 2025-01-06 at 5 27 37 PM" src="https://github.com/user-attachments/assets/ec89246a-8edd-499e-8209-1918830213b6" />
 
-# Future Features
-1. Shopping Integration: a feature enabling users to purchase missing ingredients (directly online or 
-from nearby grocery stores with real-time stock updates.)
+
+
+
+
