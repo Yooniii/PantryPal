@@ -29,7 +29,7 @@
 
 .btn-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 5px;
 }
 
@@ -38,16 +38,15 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
-  gap: 10px;
+  gap: 7px;
 }
 
 .search-bar {
   border-radius: 4px;
   border-width: 1px;
   height: 50.5px;
-  width: 630px;
-  padding: 12px 15px;
-  margin: 0px 10px;
+  width: 750px;
+  padding: 12px 12px;
   box-shadow: 0px 3px 10px rgb(181, 181, 181);
   box-sizing: border-box;
   border: none;
@@ -70,7 +69,7 @@ button {
 }
 
 .search-btn:hover {
-  background-color: #165cbe;
+  background-color: #3e3e3e;
   cursor: pointer;
 }
 
@@ -84,9 +83,13 @@ button {
   box-shadow: 0px 3px 10px rgb(131, 131, 131);
 }
 
-.staples-btn, .diet-btn {
-  width: 120px;
+.staples-btn {
+  width: 105px;
 }
+
+.diet-btn {
+  width: 110px;
+ }
 
 .staples-btn, .diet-btn {
   font-size: 18px;
@@ -95,30 +98,35 @@ button {
 }
 
 .staples-btn:hover, .diet-btn:hover {
-  background-color: #165cbe;
+  background-color: #3e3e3e;
 }
 
 .dropdown {
   display: inline-block;
 }
 
-.dropdown:hover .dropdown-options {
+.dropdown:hover .staples-options, 
+.dropdown:hover .diet-options {
   display: block;
   cursor: default;
 }
 
-.dropdown-options {
+.staples-options, .diet-options {
   display: none;
-  background-color: black;
+  background-color: #1b1b1b;
   border: 1px solid #aeaeae;
   border-radius: 4px;
   padding: 5px;
   padding-left: 0;
   padding-right: 0;
   position: absolute;
-  width: 119px;
-  font-size: 15px;
+  font-size: 14px;
   color: white;
+  width: 105px;
+}
+
+.diet-options {
+  width: 109px;
 }
 
 input[type="checkbox"] {
