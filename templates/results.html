@@ -9,12 +9,12 @@
 </head>
 
 <body>
+  <!-- Recipe Search Component -->
   <div class="container ">
     <div class="logo-container">
       <a href="/" class="no-style"><h class="logo-name">PantryPal</h> </a>
       <img class="logo-img" src="/static/logo.png">
     </div>
-
     <form method="POST" action="/toRecipe">
       <div class="search-container">
         <div class="dropdown">
@@ -31,36 +31,50 @@
         <button class="search-btn" onclick="waiting()"></button>
       </div>
     </form>
-    
+  </div>
+
+  <div class="results-container">
     {% for recipe in recipes %}
       <div class="recipe-page">
         <div class="recipe-box">
           <h1 class="recipe-name"> {{ recipe.name }} </h1>
-          
-          <div class="main-text"> 
-            <p class="ingredients-box"> Ingredients: </p>
-            <ul class="ingredients-list">
-              {% for ingredient in recipe.ingredients %} 
+
+          <!-- Container for Image and Ingredients -->
+          <div class="recipe-header">
+            {% if recipe.image_url %}
+            <img class="recipe-image" src="{{ recipe.image_url }}" alt="Image of {{ recipe.name }}">
+            {% endif %}
+
+            <!-- Ingredients Section -->
+            <div class="ingredients-section">
+              <p class="ingredients-title"> Ingredients: </p>
+              <ul class="ingredients-list">
+                {% for ingredient in recipe.ingredients %}
                 <li class="ingredient"> {{ ingredient }} </li>
-              {% endfor %}
-            </ul>
-        
-            <div class="instructions-box">
-              <p class="instructions-title"> Instructions: </p>
-              <ol class="instructions-list">
-                {% for step in recipe.instructions %}
-                  <li class="step"> {{ step }} </li>
                 {% endfor %}
-              </ol>
+              </ul>
+              {% if recipe.missing_ingredients %}
+              <p class="ingredients-title"> Missing Ingredients: </p>
+              <ul class="ingredients-list">
+                {% for missing_ingr in recipe.missing_ingredients %}
+                <li class="ingredient"> {{ missing_ingr }} </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
             </div>
+          </div>
+
+          <!-- Instructions Section -->
+          <div class="instructions-section">
+            <p class="instructions-title"> Instructions: </p>
+            <ol class="instructions-list">
+              {% for step in recipe.instructions %}
+              <li class="step"> {{ step }} </li>
+              {% endfor %}
+            </ol>
           </div>
         </div>
       </div>
     {% endfor %}
-
-
-  <script src="/static/script.js"></script>
+  </div>
 </body>
-
-
-
